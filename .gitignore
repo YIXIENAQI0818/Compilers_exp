@@ -1,0 +1,13 @@
+*.zip
+*.rar
+*.7z
+*.exe
+*.out
+*.o
+*.obj
+.DS_Store
+__MACOSX/
+._*
+.vs/
+.vscode/
+.idea/

@@ -1,0 +1,5 @@
+Syntax error at (1,15): syntax error
+Lexical error at (3,5): invalid identifier 123abc
+Syntax error at (3,12): syntax error
+Syntax error at (5,33): syntax error
+Syntax error at (7,10): syntax error

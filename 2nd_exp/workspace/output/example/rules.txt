@@ -1,0 +1,175 @@
+BType -> INT
+ConstArrayDims -> empty
+Number -> INT_CONST
+PrimaryExp -> Number
+UnaryExp -> PrimaryExp
+MulExp -> UnaryExp
+AddExp -> MulExp
+ConstExp -> AddExp
+ConstInitVal -> ConstExp
+ConstDef -> IDENT ConstArrayDims ASSIGN ConstInitVal
+ConstDefs -> ConstDef
+ConstDecl -> CONST BType ConstDefs SEMICOLON
+Decl -> ConstDecl
+CompUnitItem -> Decl
+CompUnitItems -> CompUnitItem
+BType -> INT
+VarArrayDims -> empty
+LValIndexList -> empty
+LVal -> IDENT LValIndexList
+PrimaryExp -> LVal
+UnaryExp -> PrimaryExp
+MulExp -> UnaryExp
+AddExp -> MulExp
+ConstExp -> AddExp
+VarArrayDim -> LBRACK ConstExp RBRACK
+VarArrayDims -> VarArrayDims VarArrayDim
+VarDef -> IDENT VarArrayDims
+VarDefs -> VarDef
+VarDecl -> BType VarDefs SEMICOLON
+Decl -> VarDecl
+CompUnitItem -> Decl
+CompUnitItems -> CompUnitItems CompUnitItem
+BType -> INT
+BType -> INT
+FuncArraySuffixs -> empty
+FuncFParam -> BType IDENT FuncArraySuffixs
+FuncFParams -> FuncFParam
+BlockItems -> empty
+LValIndexList -> empty
+LVal -> IDENT LValIndexList
+PrimaryExp -> LVal
+UnaryExp -> PrimaryExp
+MulExp -> UnaryExp
+AddExp -> MulExp
+RelExp -> AddExp
+EqExp -> RelExp
+Number -> INT_CONST
+PrimaryExp -> Number
+UnaryExp -> PrimaryExp
+MulExp -> UnaryExp
+AddExp -> MulExp
+RelExp -> AddExp
+EqExp -> EqExp EQ RelExp
+LAndExp -> EqExp
+LOrExp -> LAndExp
+LValIndexList -> empty
+LVal -> IDENT LValIndexList
+PrimaryExp -> LVal
+UnaryExp -> PrimaryExp
+MulExp -> UnaryExp
+AddExp -> MulExp
+RelExp -> AddExp
+EqExp -> RelExp
+Number -> INT_CONST
+PrimaryExp -> Number
+UnaryExp -> PrimaryExp
+MulExp -> UnaryExp
+AddExp -> MulExp
+RelExp -> AddExp
+EqExp -> EqExp EQ RelExp
+LAndExp -> EqExp
+LOrExp -> LOrExp OR LAndExp
+Cond -> LOrExp
+Number -> INT_CONST
+PrimaryExp -> Number
+UnaryExp -> PrimaryExp
+MulExp -> UnaryExp
+AddExp -> MulExp
+Exp -> AddExp
+OptExp -> Exp
+Stmt -> RETURN OptExp SEMICOLON
+LValIndexList -> empty
+LVal -> IDENT LValIndexList
+PrimaryExp -> LVal
+UnaryExp -> PrimaryExp
+MulExp -> UnaryExp
+AddExp -> MulExp
+Number -> INT_CONST
+PrimaryExp -> Number
+UnaryExp -> PrimaryExp
+MulExp -> UnaryExp
+AddExp -> AddExp MINUS MulExp
+Exp -> AddExp
+FuncRParams -> Exp
+UnaryExp -> IDENT LPAREN FuncRParams RPAREN
+MulExp -> UnaryExp
+AddExp -> MulExp
+LValIndexList -> empty
+LVal -> IDENT LValIndexList
+PrimaryExp -> LVal
+UnaryExp -> PrimaryExp
+MulExp -> UnaryExp
+AddExp -> MulExp
+Number -> INT_CONST
+PrimaryExp -> Number
+UnaryExp -> PrimaryExp
+MulExp -> UnaryExp
+AddExp -> AddExp MINUS MulExp
+Exp -> AddExp
+FuncRParams -> Exp
+UnaryExp -> IDENT LPAREN FuncRParams RPAREN
+MulExp -> UnaryExp
+AddExp -> AddExp PLUS MulExp
+Exp -> AddExp
+OptExp -> Exp
+Stmt -> RETURN OptExp SEMICOLON
+Stmt -> IF LPAREN Cond RPAREN Stmt ELSE Stmt
+BlockItem -> Stmt
+BlockItems -> BlockItems BlockItem
+Block -> LBRACE BlockItems RBRACE
+FuncDef -> INT IDENT LPAREN FuncFParams RPAREN Block
+CompUnitItem -> FuncDef
+CompUnitItems -> CompUnitItems CompUnitItem
+BType -> INT
+FuncFParams -> empty
+BlockItems -> empty
+BType -> INT
+VarArrayDims -> empty
+Number -> INT_CONST
+PrimaryExp -> Number
+UnaryExp -> PrimaryExp
+MulExp -> UnaryExp
+AddExp -> MulExp
+Exp -> AddExp
+InitVal -> Exp
+VarDef -> IDENT VarArrayDims ASSIGN InitVal
+VarDefs -> VarDef
+VarDecl -> BType VarDefs SEMICOLON
+Decl -> VarDecl
+BlockItem -> Decl
+BlockItems -> BlockItems BlockItem
+LValIndexList -> empty
+Number -> INT_CONST
+PrimaryExp -> Number
+UnaryExp -> PrimaryExp
+MulExp -> UnaryExp
+AddExp -> MulExp
+Exp -> AddExp
+LValIndexList -> LValIndexList LBRACK Exp RBRACK
+LVal -> IDENT LValIndexList
+LValIndexList -> empty
+LVal -> IDENT LValIndexList
+PrimaryExp -> LVal
+UnaryExp -> PrimaryExp
+MulExp -> UnaryExp
+AddExp -> MulExp
+Number -> INT_CONST
+PrimaryExp -> Number
+UnaryExp -> PrimaryExp
+MulExp -> UnaryExp
+AddExp -> AddExp PLUS MulExp
+Exp -> AddExp
+FuncRParams -> Exp
+UnaryExp -> IDENT LPAREN FuncRParams RPAREN
+MulExp -> UnaryExp
+AddExp -> MulExp
+Exp -> AddExp
+Stmt -> LVal ASSIGN Exp SEMICOLON
+BlockItem -> Stmt
+BlockItems -> BlockItems BlockItem
+Block -> LBRACE BlockItems RBRACE
+FuncDef -> INT IDENT LPAREN FuncFParams RPAREN Block
+CompUnitItem -> FuncDef
+CompUnitItems -> CompUnitItems CompUnitItem
+CompUnit -> CompUnitItems

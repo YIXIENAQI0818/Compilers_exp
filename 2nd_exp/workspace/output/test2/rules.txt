@@ -1,0 +1,62 @@
+BType -> INT
+ConstArrayDims -> empty
+ConstDecl -> CONST BType error SEMICOLON
+Decl -> ConstDecl
+CompUnitItem -> Decl
+CompUnitItems -> CompUnitItem
+BType -> INT
+ConstArrayDims -> empty
+Number -> INT_CONST
+PrimaryExp -> Number
+UnaryExp -> PrimaryExp
+MulExp -> UnaryExp
+AddExp -> MulExp
+ConstExp -> AddExp
+ConstInitVal -> ConstExp
+ConstDef -> IDENT ConstArrayDims ASSIGN ConstInitVal
+ConstDefs -> ConstDef
+ConstArrayDims -> empty
+Number -> INT_CONST
+PrimaryExp -> Number
+UnaryExp -> PrimaryExp
+MulExp -> UnaryExp
+AddExp -> MulExp
+ConstExp -> AddExp
+ConstInitVal -> ConstExp
+ConstDef -> IDENT ConstArrayDims ASSIGN ConstInitVal
+ConstDefs -> ConstDefs COMMA ConstDef
+ConstArrayDims -> empty
+Number -> INT_CONST
+PrimaryExp -> Number
+UnaryExp -> PrimaryExp
+MulExp -> UnaryExp
+AddExp -> MulExp
+ConstExp -> AddExp
+ConstInitVal -> ConstExp
+ConstDef -> IDENT ConstArrayDims ASSIGN ConstInitVal
+ConstDefs -> ConstDefs COMMA ConstDef
+ConstDecl -> CONST BType ConstDefs SEMICOLON
+Decl -> ConstDecl
+CompUnitItem -> Decl
+CompUnitItems -> CompUnitItems CompUnitItem
+BType -> INT
+VarDecl -> BType error SEMICOLON
+Decl -> VarDecl
+CompUnitItem -> Decl
+CompUnitItems -> CompUnitItems CompUnitItem
+BType -> INT
+BType -> INT
+FuncArraySuffixs -> empty
+FuncFParam -> BType IDENT FuncArraySuffixs
+FuncFParams -> FuncFParam
+BType -> INT
+FuncArraySuffix -> empty
+FuncArraySuffixs -> LBRACK RBRACK FuncArraySuffix
+FuncFParam -> BType IDENT FuncArraySuffixs
+FuncFParams -> FuncFParams COMMA FuncFParam
+BType -> INT
+VarDecl -> BType error SEMICOLON
+Decl -> VarDecl
+CompUnitItem -> Decl
+CompUnitItems -> CompUnitItems CompUnitItem
+CompUnit -> CompUnitItems
